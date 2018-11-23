@@ -1,5 +1,6 @@
 # mini_project_3
-mini_project_1 with database
+mini_project_1 with database</br>
+mini_project_1 link is [here](https://github.com/trashcrash/EC601-P1)
 ## Using mysql
 ### Install mysql-connector
 ```
