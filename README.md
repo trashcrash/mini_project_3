@@ -41,6 +41,7 @@ A database named pic_contents is then created. The tables are listed below. </br
 And the table structure is like:</br>
 <img src="https://github.com/trashcrash/mini_project_3/blob/master/structure.png" width="1000"></br>
 ### Add data
+Also, change the username and password to yours before you run it. 
 Run the program modified from mini_project_1: </br>
 ```
 $ python tweet_video_tagger.py
