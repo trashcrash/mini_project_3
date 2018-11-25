@@ -33,7 +33,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=[PATH TO YOUR JSON FILE]
 ```
 to add your json file to system environment. Then you should be good to go (Please open an issue if it does not work, it's possible that I have missed something). 
 ### Create a database
-In order to create a database, a MySQL account is needed (or not), depending on your MySQL settings. Replace my pre-set username and password with yours before you run the program. 
+In order to create a database, a MySQL account is needed (or not), depending on your MySQL settings. 
 ```
 $ python create_database.py
 ```
@@ -42,9 +42,20 @@ A database named pic_contents is then created. The tables are listed below. </br
 And the table structure is like:</br>
 <img src="https://github.com/trashcrash/mini_project_3/blob/master/structure.png" width="1000"></br>
 ### Add data
-Also, change the username and password to yours before you run it. 
 Run the program modified from mini_project_1: </br>
 ```
 $ python tweet_video_tagger.py
 ```
 Follow the instructions and the data obtained will be inserted into your database. 
+### Search twitter name by tag
+Run
+```
+$ python search_twitter_by_tag.py
+``` 
+and enter the tag of your desire. The output will be the corresponding twitter names. 
+### Check statistics
+Run 
+```
+$ python statistics.py
+```
+and the program will show the most frequently used tag and the number of tweets (of different accounts) included in your database. 
