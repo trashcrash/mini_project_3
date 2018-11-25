@@ -18,7 +18,8 @@ from mysql.connector import errorcode
 FRAMERATE = 0.3
 IMAGE_LIST_NAME = 'tweet_image_list.txt'
 IMAGE_INITIAL_NAME = "twitter_image_"
-
+USERNAME = ''
+PASSWORD = ''
 def get_all_tweets(screen_name, number_of_tweets, twitter_name):
 
     # Twitter Authentication
@@ -68,7 +69,7 @@ def get_all_tweets(screen_name, number_of_tweets, twitter_name):
         lines = f.readlines()
 
     # Connect to database and insert twitter name into twitters table
-    cnx = mysql.connector.connect(user='Bob', password = 'bu', database='pic_contents')
+    cnx = mysql.connector.connect(user = USERNAME, password = PASSWORD, database = 'pic_contents')
     cursor = cnx.cursor()
     add_twitter = ("INSERT IGNORE INTO twitters "
                    "(twit_no, twit_name) "
@@ -178,7 +179,7 @@ def analyze_labels_file(path, pic_start_id):
     content_no = list(range(1,label_count+1))
 
     # Connect to database
-    cnx = mysql.connector.connect(user='Bob', password = 'bu', database='pic_contents')
+    cnx = mysql.connector.connect(user = USERNAME, password = PASSWORD, database='pic_contents')
     cursor = cnx.cursor()
 
     # Add the data to contents table
@@ -242,6 +243,8 @@ def clean_up():
     
 if __name__ == '__main__':
     try:
+        USERNAME = input("Please enter your MySQL username: \n")
+        PASSWORD = input("Please enter your password: \n")
         number_of_tweets = input('Please enter the number of tweets you wish to scan (max = 200).\n')
         twitter_name = input('Please enter the twitter name you are willing to search. e.g. @Bob.\n')
         pic_start_id = get_all_tweets(twitter_name, number_of_tweets, twitter_name)

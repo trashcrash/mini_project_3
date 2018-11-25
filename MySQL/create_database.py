@@ -36,7 +36,9 @@ TABLES['pic_content'] = (
     "  FOREIGN KEY (`content_no`) REFERENCES `contents` (`content_no`) ON DELETE CASCADE"
     ") ENGINE=InnoDB")
 
-cnx = mysql.connector.connect(user='Bob', password = 'bu')
+USERNAME = input("Please enter your MySQL username: \n")
+PASSWORD = input("Please enter your password: \n")
+cnx = mysql.connector.connect(user = USERNAME, password = PASSWORD)
 cursor = cnx.cursor()
 cursor.execute("DROP DATABASE "+DB_NAME)
 def create_database(cursor):
