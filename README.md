@@ -42,9 +42,9 @@ A database named pic_contents is then created. The tables are listed below. </br
 And the table structure is like:</br>
 <img src="https://github.com/trashcrash/mini_project_3/blob/master/structure.png" width="1000"></br>
 ### Add data
-Run the program modified from mini_project_1: </br>
+Run the program modified from mini_project_1 in MySQL directory: </br>
 ```
-$ python tweet_video_tagger.py
+$ python tweet_video_tagger_MySQL.py
 ```
 Follow the instructions and the data obtained will be inserted into your database. 
 ### Search twitter name by tag
@@ -59,3 +59,34 @@ Run
 $ python statistics.py
 ```
 and the program will show the most frequently used tag and the number of tweets (of different accounts) included in your database. 
+## Using MongoDB
+### Install MongoDB
+Follow the instruction on [this website]((https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) and install MongoDB according to your operating system. </br></br>
+To use the python MongoDB library, 
+```
+$ pip install pymongo
+```
+### Set Google cloud credentials
+Same as mentioned above
+### Run MongoDB
+```
+$ sudo mongod
+```
+### Run the main program
+Go to MongoDB directory, run
+```
+$ python tweet_video_tagger_MongoDB.py
+```
+The database is built and the data is inserted after this. 
+### Search twitter name by tag
+Run
+```
+$ python search_twitter_by_tag.py
+``` 
+and enter the tag of your desire. The output will be the corresponding twitter names. 
+### Check statistics
+Run 
+```
+$ python statistics.py
+```
+and the program will show the number of tweets (of different accounts) included in your database. 
