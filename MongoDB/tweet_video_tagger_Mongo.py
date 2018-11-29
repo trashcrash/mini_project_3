@@ -167,8 +167,7 @@ def analyze_labels_file(path, dict_list):
             file.write('\tConfidence: {}'.format(confidence) + '\n')
         file.write('\n')
     file.close()
-    for post in dict_list:
-        POSTS.insert_one(post)
+    POSTS.insert_many(dict_list)
     print('Report generated\n')
     print('****************************************')
     
